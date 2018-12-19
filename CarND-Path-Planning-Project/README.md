@@ -51,7 +51,7 @@ The code structure is as below:
   
   ![equisitant](images/equidistant.png)
 * Now we compute the coordinates using the spline
-* After we have the coordinates, we shift the orientation back.
+* After we have the coordinates, we shift the orientation back. [line 456](./src/main.cpp#L456)
 
    
 ### Simulator.
