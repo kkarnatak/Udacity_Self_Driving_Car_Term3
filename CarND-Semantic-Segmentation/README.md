@@ -68,6 +68,8 @@ The red line is training using images without augmentation.</span></p>
 <span style="color:blue">
 The blue line is training using images with augmentation.</span></p>
 
+The blue line graph is the output of the final network.
+
 Notes: To install imgaug please use the instructions at:
 
 [imgaug installation](https://imgaug.readthedocs.io/en/latest/source/installation.html#install-requirements)
