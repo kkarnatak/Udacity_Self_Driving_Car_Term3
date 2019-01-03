@@ -70,7 +70,8 @@ The training with different configurations showed the above results w.r.t traini
 
 `The blue line graph is the output of the final network`.
 
-Notes: To install imgaug please use the instructions at:
+**Please Note: The helper.py will require imgaug package to be installed.
+To install imgaug please use the instructions at:**
 
 [imgaug installation](https://imgaug.readthedocs.io/en/latest/source/installation.html#install-requirements)
 
