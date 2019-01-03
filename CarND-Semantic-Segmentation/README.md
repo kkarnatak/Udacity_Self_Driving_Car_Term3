@@ -18,15 +18,15 @@ The above files are pre-implemented except main.py.
 
 The `main.py` consists of the main network. The following changes were made in `main.py`:
 
-1. The FUNCTION downloads the VGG16 model if not available in the data directory.
+1. The `load_vgg` [line 21](./main.py#L21) downloads the VGG16 model if not available in the data directory.
 2. As suggested the layer 3, layer 4 and layer 7 are extracted from the model. In addition, the input and keep probability are also extracted.
-3. The convolution layer `conv_1x1_vgg_layer_7` with a kernel 1 is created.
-4. First deconvolution layer `first_upsample_deconv_x2` with a kernel 4 is created using a stride of 2 from the convolution layer `conv_1x1_vgg_layer_7`.
-5. The above two layers were used to create first skip layer
-6. The second convolution layer `conv_1x1_vgg_layer_4` with a kernel 1 is created.
-7. The second deconvolution layer `second_upsample_deconv_x2` with kernel 4 is created using a stride of 2 from the convolution layer `conv_1x1_vgg_layer_4`
-8. The above two layers are used to create second skip layer.
-9. The third convolution layer `conv_1x1_vgg_layer_3 `with a kernel 1 is created.
+3. The convolution layer `conv_1x1_vgg_layer_7` [line 65](./main.py#L65) with a kernel 1 is created.
+4. First deconvolution layer `first_upsample_deconv_x2` [line 74](./main.py#L74) with a kernel 4 is created using a stride of 2 from the convolution layer `conv_1x1_vgg_layer_7`.
+5. The second convolution layer `conv_1x1_vgg_layer_4` [line 84](./main.py#L84) with a kernel 1 is created.
+6. The above two layers were used to create first skip layer [line 93](./main.py#L93)
+7. The second deconvolution layer `second_upsample_deconv_x2` with kernel 4 is created using a stride of 2 from the convolution layer `conv_1x1_vgg_layer_4` [line 96](./main.py#L96)
+8. The third convolution layer `conv_1x1_vgg_layer_3` [line 106](./main.py#L106) with a kernel 1 is created.
+9. The above two layers are used to create second skip layer [line 115](./main.py#L115).
 
 
 **Training configuration**
@@ -57,18 +57,18 @@ The training with different configurations showed the above results w.r.t traini
 
 <p>
 <span style="color:orange">
-The orange line is with stochastic gradient descent without learning decay. It shows lots of overfitting.
+* The orange line is with stochastic gradient descent without learning decay. It shows lots of overfitting.
 </span></p>
 
 <p>
 <span style="color:red">
-The red line is training using images without augmentation.</span></p>
+* The red line is training using images without augmentation.</span></p>
 
 <p>
 <span style="color:blue">
-The blue line is training using images with augmentation.</span></p>
+* The blue line is training using images with augmentation.</span></p>
 
-The blue line graph is the output of the final network.
+`The blue line graph is the output of the final network`.
 
 Notes: To install imgaug please use the instructions at:
 
